@@ -39,7 +39,7 @@ class JWProxy {
   timeout;
 
   constructor(opts = {}) {
-    const options = _.defaults(opts, {
+    const options = _.defaults(_.omit(opts, 'log'), {
       scheme: 'http',
       server: 'localhost',
       port: 4444,
